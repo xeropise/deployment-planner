@@ -77,11 +77,11 @@ const ServerIcon = styled.div`
   font-size: 22px;
   background-color: ${props => {
     switch(props.type) {
-      case 'web': return '#28a745';
-      case 'db': return '#007bff';
-      case 'api': return '#fd7e14';
-      case 'cache': return '#6f42c1';
-      default: return '#6c757d';
+      case 'api': return '#ffffff';
+      case 'db': return '#ffffff';
+      case 'message-queue': return '#ffffff';
+      case 'function': return '#ffffff';
+      default: return '#ffffff';
     }
   }};
   color: white;
@@ -137,22 +137,22 @@ const Button = styled.button`
 // Server type icons
 const getServerIcon = (type) => {
   switch(type) {
-    case 'web': return '🌐';
+    case 'api': return '🌐';
     case 'db': return '💾';
-    case 'api': return '🔌';
-    case 'cache': return '⚡';
-    default: return '🖥️';
+    case 'message-queue': return '🚎';
+    case 'function': return '⚡';
+    default: return '❓';
   }
 };
 
 // Server type names in Korean
 const getServerTypeName = (type) => {
   switch(type) {
-    case 'web': return '웹 서버';
-    case 'db': return '데이터베이스';
-    case 'api': return 'API 서버';
-    case 'cache': return '캐시 서버';
-    default: return '기타';
+    case 'api': return 'Azure App Service';
+    case 'db': return 'database';
+    case 'message-queue': return 'Azure Service Bus';
+    case 'function': return 'Azure Function';
+    default: return 'etc';
   }
 };
 

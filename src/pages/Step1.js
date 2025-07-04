@@ -142,9 +142,9 @@ function Step1({ formData, setFormData }) {
             onChange={handleChange}
             required
           >
-            <option value="개발">개발</option>
-            <option value="스테이징">스테이징</option>
-            <option value="프로덕션">프로덕션</option>
+            <option value="dev">DEV</option>
+            <option value="stage">STAGE</option>
+            <option value="prod">PROD</option>
           </Select>
         </FormGroup>
 
@@ -162,7 +162,7 @@ function Step1({ formData, setFormData }) {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="serverCount">서버 수</Label>
+          <Label htmlFor="serverCount">자원 수</Label>
           <RangeContainer>
             <Input
               type="range"
@@ -174,7 +174,7 @@ function Step1({ formData, setFormData }) {
               onChange={handleChange}
               required
             />
-            <RangeValue>{formData.serverCount || '3'} 대</RangeValue>
+            <RangeValue>{formData.serverCount || '3'} 개</RangeValue>
           </RangeContainer>
         </FormGroup>
 

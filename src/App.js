@@ -136,7 +136,7 @@ function App() {
         </ProgressBar>
         <ProgressLabels>
           <ProgressLabel active={currentStep === 1}>기본 정보</ProgressLabel>
-          <ProgressLabel active={currentStep === 2}>서버 설정</ProgressLabel>
+          <ProgressLabel active={currentStep === 2}>자원 설정</ProgressLabel>
           <ProgressLabel active={currentStep === 3}>배포 순서</ProgressLabel>
           <ProgressLabel active={currentStep === 4}>상세 설정</ProgressLabel>
           <ProgressLabel active={currentStep === 5}>결과 확인</ProgressLabel>

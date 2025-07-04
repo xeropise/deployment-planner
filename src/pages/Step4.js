@@ -206,11 +206,11 @@ const Button = styled.button`
 // Server type icons
 const getServerIcon = (type) => {
   switch(type) {
-    case 'web': return '🌐';
+    case 'api': return '🌐';
     case 'db': return '💾';
-    case 'api': return '🔌';
-    case 'cache': return '⚡';
-    default: return '🖥️';
+    case 'message-queue': return '🚎';
+    case 'function': return '⚡';
+    default: return '❓';
   }
 };
 
@@ -434,11 +434,11 @@ function Step4({ formData, setFormData }) {
   // Helper function to get server type name in Korean
   const getServerTypeName = (type) => {
     switch(type) {
-      case 'web': return '웹 서버';
-      case 'db': return '데이터베이스';
-      case 'api': return 'API 서버';
-      case 'cache': return '캐시 서버';
-      default: return '기타';
+      case 'api': return 'Azure App Service';
+      case 'db': return 'database';
+      case 'message-queue': return 'Azure Service Bus';
+      case 'function': return 'Azure Function';
+      default: return 'etc';
     }
   };
 
@@ -466,7 +466,7 @@ function Step4({ formData, setFormData }) {
             <SummaryValue>{formData.estimatedTime} 분</SummaryValue>
           </SummaryItem>
           <SummaryItem>
-            <SummaryLabel>서버 수:</SummaryLabel>
+            <SummaryLabel>자원 수:</SummaryLabel>
             <SummaryValue>{formData.servers?.length || 0}</SummaryValue>
           </SummaryItem>
         </SummaryContent>
@@ -474,7 +474,7 @@ function Step4({ formData, setFormData }) {
 
       <Form onSubmit={handleSubmit}>
         <ServerSelector>
-          {formData.servers?.map(server => (
+          {formData.deploymentOrder?.map(server => (
             <ServerButton
               key={server.id}
               type="button"
